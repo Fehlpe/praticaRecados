@@ -27,9 +27,7 @@ function Home() {
         <Grid item xs={3}>
           <CardComp />
         </Grid>
-        <Grid item xs={3}>
-          <CardComp />
-        </Grid>
+
         <Grid item xs={3}>
           <CardComp />
         </Grid>
