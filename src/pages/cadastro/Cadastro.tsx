@@ -6,6 +6,7 @@ import Input from '../../Shared/components/inputs/Input';
 import Background from '../../Shared/components/background/Background';
 import Buttons from '../../Shared/components/botoes/Buttons';
 import { Button } from "@mui/material";
+import { useState } from "react";
 
 const CardSign = styled.div`
     width: 50%;
@@ -23,6 +24,13 @@ const CardSign = styled.div`
 
 function Cadastro(){
 
+    const [name, setName] = useState('');
+    const saveName = (e:any) => {
+        e.preventDefault()
+        setName(e.target.value)
+        sessionStorage.setItem('loggedUser', JSON.stringify(e.target.value));
+    }
+
     return(
         <>
         <Background>
@@ -31,7 +39,7 @@ function Cadastro(){
                     <h1>Cadastrar</h1>
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={12} md={12}>
-                            <Input id='standard-name-input' label='Nome'/>
+                            <Input state={saveName} id='standard-name-input' label='Nome'/>
                         </Grid>
 
                         <Grid item xs={12} sm={12} md={12}>

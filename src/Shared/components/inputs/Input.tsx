@@ -4,9 +4,11 @@ interface InputProps{
     id:string;
     type?:string;
     label:string;
+    state?:any;
 }
 
-const Input: React.FC<InputProps> = ({id, type, label}) => {
+const Input: React.FC<InputProps> = ({id, type, label, state}) => {
+
   return (
     <>
       <TextField
@@ -14,6 +16,7 @@ const Input: React.FC<InputProps> = ({id, type, label}) => {
         id={id}
         label={label}
         variant="standard"
+        onChange={state}
         fullWidth
         focused
         InputLabelProps={{sx:{color:"white"}}}
