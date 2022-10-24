@@ -16,24 +16,41 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
+const listaDeRecados = [
+  {
+    titulo: "Estudar",
+    texto: "Material UI",
+  },
+  {
+    titulo: "Estudar",
+    texto: "useState"
+  },
+  {
+    titulo: "Mercado",
+    texto: "Comprar leite",
+  },
+  {
+    titulo: "Livros",
+    texto: "Ler Drácula e Sherlock"
+  }
+]
+
 function Home() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Link to="/">Home</Link>
-      <Typography gutterBottom variant="h1">
+      <Typography gutterBottom variant="h2">
         Bem vindo a página
       </Typography>
       <Grid container spacing={2}>
-        <Grid item xs={3}>
-          <CardComp />
-        </Grid>
-
-        <Grid item xs={3}>
-          <CardComp />
-        </Grid>
-        <Grid item xs={3}>
-          <CardComp />
-        </Grid>
+        {listaDeRecados.map((item) => (
+          <Grid item xs={3}>
+            <CardComp
+              titulo={item.titulo}
+              texto={item.texto}
+            />
+          </Grid>
+        ))}
       </Grid>
     </Box>
   );

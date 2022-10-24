@@ -25,10 +25,10 @@ const CardComp: React.FC<CardCompProps> = ({ titulo, texto, xs, lg, acao }) => {
         <CardContent>
           <Checkbox />
           <Typography gutterBottom variant="h5" component="div">
-            estudar
+            {titulo}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            tentar aprender mais sobre react e material ui
+            {texto}
           </Typography>
         </CardContent>
         <CardActions>
