@@ -1,6 +1,5 @@
 import { Box, Typography } from "@mui/material";
 import styled from "styled-components";
-import imagem from "./img.png";
 import { Link } from "react-router-dom";
 
 const DivImg = styled.div`
@@ -31,7 +30,8 @@ export default function ErroPagina() {
       </Typography>
       <DivImg>
         {" "}
-        <img src={imagem} alt="" />
+        <img src="https://assets.stickpng.com/images/5a0c69ce82e02d31ecb8d013.png"
+        alt="" />
       </DivImg>
     </Box>
   );
