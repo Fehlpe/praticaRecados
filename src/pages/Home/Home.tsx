@@ -1,12 +1,12 @@
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
-import CardComp from "../../components/card/Card";
 import { Box } from "@mui/material";
 
 import { styled } from "@mui/material/styles";
 
 import Paper from "@mui/material/Paper";
+import CardComp from "../../Shared/components/card/Card";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Button } from "@mui/material";
+
+import Button from "@mui/material/Button";
+import DeleteIcon from "@mui/icons-material/Delete";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import CloseIcon from "@mui/icons-material/Close";
 import Dialog from "@mui/material/Dialog";
@@ -8,11 +10,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 
-interface SobreProps {
-  titulo: string;
-}
-
-const Sobre: React.FC<SobreProps> = ({ titulo }) => {
+const ButtonExcluir: React.FC = () => {
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -24,10 +22,16 @@ const Sobre: React.FC<SobreProps> = ({ titulo }) => {
   };
   return (
     <React.Fragment>
-      <Button variant="contained" color="secondary" onClick={handleClickOpen}>
-        Clique em Mim!
+      <Button
+        onClick={handleClickOpen}
+        autoFocus
+        variant="outlined"
+        size="small"
+        color="error"
+        startIcon={<DeleteIcon />}
+      >
+        Excluir
       </Button>
-
       <Dialog
         open={open}
         aria-labelledby="alert-dialog-title"
@@ -38,7 +42,7 @@ const Sobre: React.FC<SobreProps> = ({ titulo }) => {
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Esta operação é irreversivel!
+            Recado a excluir
           </DialogContentText>
         </DialogContent>
         <DialogActions>
@@ -51,13 +55,13 @@ const Sobre: React.FC<SobreProps> = ({ titulo }) => {
             Cancelar
           </Button>
           <Button
-            onClick={() => console.log("Clicou")}
+            onClick={() => console.log("Excluiu")}
             autoFocus
             color="success"
             variant="contained"
             startIcon={<CheckCircleOutlineIcon />}
           >
-            Aceito
+            Excluir
           </Button>
         </DialogActions>
       </Dialog>
@@ -65,4 +69,4 @@ const Sobre: React.FC<SobreProps> = ({ titulo }) => {
   );
 };
 
-export default Sobre;
+export default ButtonExcluir;
