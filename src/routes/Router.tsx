@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "../pages/login/Login";
 import Cadastro from "../pages/cadastro/Cadastro";
 import Home from "../pages/home/Home";
-
+import ErroPagina from "../Shared/components/erroPagina/ErroPagina";
 
 const AppRoutes: React.FC = () => {
   return (
@@ -14,7 +14,7 @@ const AppRoutes: React.FC = () => {
           {" "}
         </Route>
         <Route path="/cadastro" element={<Cadastro />} />
-        <Route path="*" element={<h1>Página nao encontrada.</h1>} />
+        <Route path="*" element={<ErroPagina />} />
       </Routes>
     </BrowserRouter>
   );
