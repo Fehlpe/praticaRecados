@@ -21,7 +21,7 @@ export default function ErroPagina() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Link to="/">Home</Link>
-      <Typography variant="h3" align="center" mt={5} p={2}>
+      <Typography variant="h3" align="center" p={1}>
         Ops! Não encontramos essa página.
       </Typography>
 
