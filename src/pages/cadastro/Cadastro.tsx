@@ -27,7 +27,7 @@ function Cadastro(){
     const [name, setName] = useState('');
 
     useEffect(() => {
-        sessionStorage.setItem('loggedUser', JSON.stringify(name));
+        sessionStorage.setItem('loggedUser', (name));
       }, [name]);
 
     return(

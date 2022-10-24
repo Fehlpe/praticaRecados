@@ -6,7 +6,7 @@ import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import CardComp from "../../Shared/components/card/Card";
 
-const loggedUser = JSON.parse(sessionStorage.getItem('loggedUser') || "");
+const sessionUser = sessionStorage.getItem("loggedUser") || "usuário";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -40,7 +40,7 @@ function Home() {
     <Box sx={{ flexGrow: 1 }}>
       <Link to="/">Home</Link>
       <Typography gutterBottom variant="h2">
-        Bem vindo a página, {loggedUser}
+        Bem vindo a página, {sessionUser}
       </Typography>
       <Grid container spacing={2}>
         {listaDeRecados.map((item) => (
